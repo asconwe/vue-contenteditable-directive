@@ -3,9 +3,9 @@ v-model isn't compatible with contentdeditable divs - this directive fills in
 
 ## Usage 
 ``` 
-import contenteditable from 'contenteditable'
+import contenteditableDirective from 'vue-contenteditable-directive'
 ...
-Vue.use(contenteditable)
+Vue.use(contenteditableDirective)
 ```
 ```
 <template>
