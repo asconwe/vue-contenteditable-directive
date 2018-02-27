@@ -4,9 +4,7 @@ v-model isn't compatible with contentdeditable divs - this directive fills in
 ## Usage 
 ``` 
 import contenteditable from 'contenteditable'
-```
-then
-```
+...
 Vue.use(contenteditable)
 ```
 ```
