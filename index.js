@@ -1,4 +1,4 @@
-const ContentEditable = {
+const contenteditable = {
   install(Vue) {
     Vue.directive("contenteditable", {
       bind(el, { expression }, vnode) {
