@@ -1,0 +1,23 @@
+{
+  "name": "vue-contenteditable-directive",
+  "version": "1.0.0",
+  "description": "v-model isn't compatible with contentdeditable divs - this directive fills in",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asconwe/vue-contenteditable-directive.git"
+  },
+  "keywords": [
+    "Vue",
+    "directive"
+  ],
+  "author": "August Conwell",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/asconwe/vue-contenteditable-directive/issues"
+  },
+  "homepage": "https://github.com/asconwe/vue-contenteditable-directive#readme"
+}
