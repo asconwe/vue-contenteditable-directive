@@ -1,22 +1,38 @@
 const contenteditable = {
   install(Vue) {
     Vue.directive("contenteditable", {
-      bind(el, { expression }, vnode) {
-        el.contentEditable = true;
+      bind(el, { arg, value, expression, modifiers }, vnode) {
+        if (arg) {
+          el.contentEditable = value;
+        } else {
+          el.contentEditable = true;
+        }
+        const key = arg || expression;
         el.oninput = function(event) {
-          vnode.context[expression] = event.target.innerText;
+          vnode.context[key] = event.target.innerText;
           el.dataset.comparison = event.target.innerText;
         };
         el.onblur = function(event) {
-          el.innerText = el.dataset.message;
+          el.innerText = el.dataset[key];
+          console.log({ el });
         };
+        el.dataset[key] = vnode.context[key];
+        el.innerText = vnode.context[key];
+        return;
       },
-      componentUpdated: function(el, { expression }, vnode) {
-        const message = vnode.context[expression];
-        el.dataset[expression] = message;
-        if (el.dataset[expression] !== el.dataset.comparison) {
-          el.innerText = vnode.context[expression];
+      componentUpdated: function(el, { arg, value, expression }, vnode) {
+        if (arg) {
+          el.contentEditable = value;
+        } else {
+          el.contentEditable = true;
         }
+        const key = arg || expression;
+        const val = vnode.context[key];
+        el.dataset[key] = val;
+        if (val !== el.dataset.comparison) {
+          el.innerText = val;
+        }
+        return;
       }
     });
   }
