@@ -29,7 +29,7 @@ export default {
 </script>
 ```
 
-The directive uses innerText to manipulate the DOM by default. However, you can use the modifier, 'dangerousHTML', to allow the directive to use/set innerHTML of the editable element: 
+The directive uses innerText to manipulate the DOM by default. However, you can use the modifier, dangerousHTML, to allow the directive to use and set the innerHTML of the editable element: 
 ```
 v-contentdeditable:someDataKey.dangerousHTML="true"
 ```
