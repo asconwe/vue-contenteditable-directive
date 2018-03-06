@@ -1,6 +1,6 @@
 {
   "name": "vue-contenteditable-directive",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "v-model isn't compatible with contentdeditable divs - this directive fills in",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "Vue",
-    "directive"
+    "directive",
+    "contenteditable"
   ],
   "author": "August Conwell",
   "license": "Apache-2.0",
