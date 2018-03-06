@@ -1,10 +1,10 @@
 # vue-contenteditable-directive
-Vue's built in v-model isn't compatible with contentdeditable divs - this directive fills in.
+Vue's built in v-model isn't compatible with contenteditable divs - this directive fills in.
 
 ## Why use contenteditable divs?
-First of all - if you can use a textarea or input with v-model, do that instead. There are a couple of quirks, though, in the implementation of textarea that make contentdeditable divs a good fit for certain applications.
+First of all - if you can use a textarea or input with v-model, do that instead. There are a couple of quirks, though, in the implementation of textarea that make contenteditable divs a good fit for certain applications.
 * Editable divs shrink and grow with the text inside of them. Textarea does not.
-* Formatting is generally more extensible in a contentdeditable div
+* Formatting is generally more extensible in a contenteditable div
 
 ## Usage 
 ``` 
@@ -31,6 +31,6 @@ export default {
 
 The directive uses innerText to manipulate the DOM by default. However, you can use the modifier, dangerousHTML, to allow the directive to use and set the innerHTML of the editable element: 
 ```
-v-contentdeditable:someDataKey.dangerousHTML="true"
+v-contenteditable:someDataKey.dangerousHTML="true"
 ```
 Be sure to protect your app against XSS!
