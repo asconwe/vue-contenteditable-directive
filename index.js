@@ -2,6 +2,7 @@ const contenteditable = {
   install(Vue) {
     Vue.directive("contenteditable", {
       bind(el, { arg, value, expression, modifiers }, vnode) {
+        const innerValue = modifiers.dangerousHTML ? "innerHTML" : "innerText";
         if (arg) {
           el.contentEditable = value;
         } else {
@@ -9,18 +10,23 @@ const contenteditable = {
         }
         const key = arg || expression;
         el.oninput = function(event) {
-          vnode.context[key] = event.target.innerText;
-          el.dataset.comparison = event.target.innerText;
+          vnode.context[key] = event.target[innerValue];
+          el.dataset.comparison = event.target[innerValue];
         };
         el.onblur = function(event) {
-          el.innerText = el.dataset[key];
+          el[innerValue] = el.dataset[key];
           console.log({ el });
         };
         el.dataset[key] = vnode.context[key];
-        el.innerText = vnode.context[key];
+        el[innerValue] = vnode.context[key];
         return;
       },
-      componentUpdated: function(el, { arg, value, expression }, vnode) {
+      componentUpdated: function(
+        el,
+        { arg, modifiers, value, expression },
+        vnode
+      ) {
+        const innerValue = modifiers.dangerousHTML ? "innerHTML" : "innerText";
         if (arg) {
           el.contentEditable = value;
         } else {
@@ -30,7 +36,7 @@ const contenteditable = {
         const val = vnode.context[key];
         el.dataset[key] = val;
         if (val !== el.dataset.comparison) {
-          el.innerText = val;
+          el[innerValue] = val;
         }
         return;
       }
