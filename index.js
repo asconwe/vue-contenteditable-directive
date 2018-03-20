@@ -15,7 +15,6 @@ const contenteditable = {
         };
         el.onblur = function(event) {
           el[innerValue] = el.dataset[key];
-          console.log({ el });
         };
         el.dataset[key] = vnode.context[key];
         el[innerValue] = vnode.context[key];
