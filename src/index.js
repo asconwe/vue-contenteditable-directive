@@ -1,4 +1,4 @@
-const contenteditable = {
+export default {
   install(Vue) {
     Vue.directive("contenteditable", {
       bind(el, { arg, value, expression, modifiers }, vnode) {
@@ -42,5 +42,3 @@ const contenteditable = {
     });
   }
 };
-
-export default contenteditable;
