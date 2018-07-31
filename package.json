@@ -1,9 +1,10 @@
 {
   "name": "vue-contenteditable-directive",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "v-model isn't compatible with contentdeditable divs - this directive fills in",
   "main": "dist/index.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
