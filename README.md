@@ -34,3 +34,10 @@ The directive uses innerText to manipulate the DOM by default. However, you can 
 v-contenteditable:someDataKey.dangerousHTML="true"
 ```
 Be sure to protect your app against XSS!
+
+
+You can also disable newlines by adding the ``.preventNL`` modifier. Then, if the user press Enter, nothing will happen. Also, paste events are filtered to replace all newlines with a space.
+```
+v-contenteditable:someDataKey.preventNL="true"
+```
+
